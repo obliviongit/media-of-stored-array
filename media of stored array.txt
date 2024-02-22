@@ -1,0 +1,38 @@
+public class Main {
+    public static void main(String[] args) {
+        
+        double[][] arrays = {
+            {10.7},
+            {1.0, 2.0, 3.0},
+            {17.4, 21.1, 39.7, 48.0},
+            {-957.0, -493.0, -384.0, -268.0, -131.0},
+            {}  
+        };
+
+        
+        for (double[] array : arrays) {
+            double median = findMedian(array);
+            System.out.println("Median: " + median);
+        }
+    }
+
+    
+    public static double findMedian(double[] array) {
+        int length = array.length;
+        if (length == 0) {
+            return -1.0; 
+        }
+        
+        
+        if (length % 2 == 0) {
+            
+            int middleIndex1 = length / 2 - 1;
+            int middleIndex2 = length / 2;
+            return (array[middleIndex1] + array[middleIndex2]) / 2.0;
+        } else {
+            
+            int middleIndex = length / 2;
+            return array[middleIndex];
+        }
+    }
+}
